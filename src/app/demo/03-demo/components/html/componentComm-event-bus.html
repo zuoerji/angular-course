@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>组件通信</h1>
+  <child-input1></child-input1>
+  <child-input2></child-input2>
+  <h3>父组件数据: {{ store.count() }}</h3>
+  <button (click)="onAddClick($event)">父组件按钮-加</button> <br>
+  <button (click)="onReduceClick($event)">父组件按钮-减</button>
+</body>
+</html>

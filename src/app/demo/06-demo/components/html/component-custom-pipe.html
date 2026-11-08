@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>管道 pipes</h1>
+  <h3>自定义管道 @Pipe</h3>
+   <div class="demo-box">
+    <div>数字 count: <span> {{ count() }} </span></div>
+    <div>展示文字-pipe1: {{ text() | pipe1 }}</div>
+    <div>展示文字-pipe2: {{ text() | pipe2 }}</div>
+    <div>展示调用: {{ shot() }}</div>
+    <button class="primary margin5" (click)="add()">增加数字 + 1</button> <br>
+    <button class="primary margin5" (click)="changeText()">更改文字</button> <br>
+  </div>
+</body>
+</html>

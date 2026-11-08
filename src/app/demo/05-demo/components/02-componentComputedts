@@ -1,0 +1,45 @@
+import { Component, signal, effect, computed, afterNextRender } from '@angular/core';
+
+/**
+ * computed 使用
+ * 1. 缓存
+ * 2. 依赖收集
+ * 
+ * afterNextRender: 下一次渲染之后
+*/
+
+@Component({
+  selector: 'component-signal',
+  templateUrl: './html/componentSignal.html'
+})
+export class ComponentSignal {
+  count = signal(1);
+  price = signal(20);
+  runCount = signal(0);
+  run = 0;
+
+  total = computed(()=> {
+    this.run += 1;
+    return this.price() * this.count();
+  })
+  constructor() {
+    afterNextRender(() => this.setRunCount());
+  }
+
+  setRunCount() {
+    this.runCount.set(this.run);
+  }
+
+  bumpPrice() {
+    this.count.update( p => p + 1);
+    this.setRunCount();
+  }
+
+  readThree() {
+    this.total();
+    this.total();
+    this.total();
+    this.setRunCount();
+    console.log('执行三次');
+  }
+}

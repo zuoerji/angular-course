@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>内置控制流</h1>
+  @defer (on viewport) {
+    <div>最终显示内容</div> 
+  } @placeholder (minimum 500ms) {
+    <div>占位</div>
+  } @loading (after 100ms; minimum 1s) {
+    <p>加载中...</p>
+  } @error {
+    <p>图表加载失败，请稍后重试。</p>
+  }
+</body>
+</html>

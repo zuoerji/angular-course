@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>signal</h1>
+  <h3>toSignal/toObservable 使用</h3>
+  <div class="demo-box">
+    <div>数字 count$: <span> {{ count$ | async }} </span></div>
+    <div>数字 signalCount: <span> {{ signalCount() }} </span></div>
+    <div>数字 observableCount$: <span> {{ observableCount$ | async }} </span></div>
+    <ul>人物:
+      @for (item of activeUsers$ | async; track item.id) {
+        <li>{{item.name}}</li>
+      }
+
+    </ul>
+    <button class="primary margin5" (click)="onClick('add')">加法</button> <br>
+    <button class="primary margin5" (click)="onClick('reset')"> 重置</button> <br>
+    <button class="primary margin5" (click)="onClick('array')"> 修改数组</button> <br>
+    <button class="primary margin5" (click)="onClick('resetArray')"> 重置数组</button> <br>
+    
+  </div>
+</body>
+</html>

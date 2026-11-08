@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>内置控制流</h1>
+  <button (click)="state.set('loading')">加载中</button> <br>
+  <button (click)="state.set('success')">成功</button> <br>
+  <button (click)="state.set('')">赞无数据</button> <br>
+  <div *ngIf="flag()"> component-control </div>
+  @if (state() === 'loading') {
+    <p>加载中....</p>
+  } @else if (state() === 'success') {
+    <p>成功!</p>
+  } @else {
+    <p>暂无数据</p>
+  }
+</body>
+</html>

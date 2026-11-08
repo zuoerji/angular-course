@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>管道 pipes</h1>
+  <h3>内置管道</h3>
+   <div class="demo-box">
+    <div class="card">
+      <div class="lab">
+        <div class="lab-title">文本类</div>
+        <p>uppercase：<strong>{{ 'angular 22' | uppercase }}</strong></p>
+        <p>lowercase：<strong>{{ 'ANGULAR 22' | lowercase }}</strong></p>
+        <p>titlecase：<strong>{{ 'hello angular' | titlecase }}</strong></p>
+        <p>slice：<strong>{{ 'abcdef' | slice:1:4 }}</strong></p>
+      </div>
+      <div class="lab">
+        <div class="lab-title">数字 / 日期类</div>
+        <p>date：<strong>{{ '2026-11-05T09:30:00' | date:'yyyy-MM-dd HH:mm' }}</strong></p>
+        <p>number：<strong>{{ 3.14159 | number:'1.2-3' }}</strong></p>
+        <p>percent：<strong>{{ 0.2567 | percent:'1.1-2' }}</strong></p>
+        <p>currency：<strong>{{ 1234.5 | currency:'CNY' }}</strong></p>
+      </div>
+      <div class="lab">
+        <div class="lab-title">调试 / 遍历类</div>
+        <p>json：<code class="inline">{{ obj | json }}</code></p>
+        <p>keyvalue：<code class="inline">{{ obj | keyvalue }}</code></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>signal</h1>
+  <h3>linkedSignal 使用</h3>
+  <div class="demo-box">
+    <div>可选城市: <span> {{ cities().join('/') }} </span></div>
+    <div>选中城市: <span> {{ selectCity() }} </span></div>
+    <button class="primary margin5" (click)="handleChange('cities')">换一批城市</button> <br>
+    <button class="primary margin5" (click)="handleChange('select')"> 手动选择第二个</button> <br>
+    <button class="primary margin5" (click)="handleChange('back')"> 回到第一组</button> <br>
+    
+  </div>
+</body>
+</html>

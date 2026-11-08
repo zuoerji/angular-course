@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>内置控制流</h1>
+  <ul>
+    <li *ngFor="let item of list(); trackBy: trackById">
+      {{ item.name }}
+    </li>
+  </ul>
+
+  <ul>
+    @for (item of list1(); track item.id) {
+      <li>{{ item.name }}</li>
+    } @empty {
+      <li>没有数据</li>
+    }
+  </ul>
+</body>
+</html>

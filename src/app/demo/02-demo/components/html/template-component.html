@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <div class="demo-box">
+        <p>你好，{{ name() }}！</p>
+        <p>点击次数：{{ count() }}（翻倍是 {{ count() * 2 }}）</p>
+        <p>商品价格：{{ product().price }} 元，库存 {{ product().stock }} 件</p>
+        <button class="primary" (click)="count.set(count() + 1)">点我 +1</button>
+    </div>
+    <div class="demo-box">
+      <input [value]="text()" (input)="onInput($event)" />
+      <p>上面输入框的 DOM value 属性 = 「{{ text() }}」</p>
+      <button [disabled]="isDisabled()" (click)="isDisabled.set(!isDisabled())">
+        {{ isDisabled() ? '已禁用' : '正常按钮（点此禁用）' }}
+      </button>
+      <p [class.active]="isActive()" (click)="isActive.set(!isActive())"
+          style="cursor:pointer;padding:6px 10px;border-radius:6px;border:1px solid #e3e6eb">
+        点我切换 active 类（当前：{{ isActive() ? '有' : '无' }}）
+      </p>
+      <div (mouseover)="hover.set(true)" (mouseout)="hover.set(false)"
+            style="padding:10px;border:1px dashed #b9c8ef;border-radius:8px;width:fit-content">
+        把鼠标移上来（当前 hover：{{ hover() ? '是' : '否' }}）
+      </div>
+      <div [style.width.%]="barWidth()" style="height:10px;background:#1f3a8a;border-radius:5px;transition:width .2s"></div>
+      <button (click)="barWidth.update( n => n + 10)">进度 +10%</button>
+    </div>
+
+    <div class="demo-box">
+      <input [(ngModel)]="name" placeholder="输入名字" />
+      <!-- <input [ngModel]="name()" (ngModelChange)="onChange(value)" placeholder="输入名字" /> -->
+      <p>组件里的 name = 「{{ name() }}」</p>
+      <button (click)="name.set('Angular')">代码改 name → 界面也变</button>
+    </div>
+
+  </div>
+</body>
+</html>

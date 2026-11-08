@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>内容投影</h1>
+  <div class="demo-box">
+    <custom-card>
+      <ng-container ngProjectAs="[card-header]">
+        <p >这是标题</p>
+        <p >这是副标题</p>
+      </ng-container>
+      <span card-content>这是内容</span>
+      这是正文
+    </custom-card>
+  </div>
+</body>
+</html>

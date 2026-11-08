@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>signal</h1>
+  <div class="demo-box">
+    <div>当前关键字: <span> {{ keyword() }} </span></div>
+    <button class="primary margin5" (click)="change('b')">改成 b</button> <br>
+    <button class="primary margin5" (click)="change('c')"> 改成 c</button> <br>
+    <button class="primary margin5" (click)="change('a')"> 改成 a</button> <br>
+    <h3>日志</h3>
+    <div>
+      @for(item of log(); track item.id) {
+        <div> {{ item.val }} </div>
+      }
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>管道 pipes</h1>
+  <h3>AsyncPipe与signal</h3>
+   <div class="demo-box">
+      <div>用户名 user1$: {{ (user1$ | async)?.name }}</div>
+      <div>用户名 user1$: {{ (user2$ | async)?.name }}</div>
+    </div>
+    <div class="demo-box">
+      @if(user3(); as u) {
+        <p> 别名: {{ u.name }} </p>
+      } @else {
+        <p> 暂无数据 </p>
+      }
+    </div>
+    <div class="demo-box">
+      @if((user4$ | async)?.name; as u) {
+        <p>别名: {{ u }}</p>
+      } @else {
+        <p> 暂无数据 </p>
+      }
+    </div>
+</body>
+</html>

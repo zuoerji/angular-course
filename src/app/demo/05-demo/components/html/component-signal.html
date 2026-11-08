@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>signal</h1>
+  <div class="demo-box">
+    <div>count: <p>{{ count() }}</p></div>
+    <div>count 只读: <p>{{ readonlyCount() }}</p></div>
+
+    <div>数组: {{ list().join(',') }} </div>
+    <div>数组长度: {{ length()  }}</div>
+    <button (click)="onSet()">set 修改</button>
+    <button (click)="onUpdate()">update 修改</button>
+    <button (click)="onSetArray()">set 修改 数组</button>
+    <button (click)="onUpdateArray()">update 修改 数组</button>
+  </div>
+</body>
+</html>
