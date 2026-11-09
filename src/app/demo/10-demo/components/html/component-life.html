@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>生命周期1</h1>
+  <div class="demo-box">
+    @if (active()) {
+      <component-child [count]="count()" [name]="name()" />
+    } @else {
+      <p>子组件已经销毁</p>
+    }
+    <div>父组件变量: user.name : {{ user().name }}</div>
+    <button class="primary margin5" (click)="add()" >增加</button> <br>
+    <button class="primary margin5" (click)="changeName('child')" >子组件-改名</button> <br>
+    <button class="primary margin5" (click)="changeName('father')" >父组件-改名</button> <br>
+    <button class="primary margin5" (click)="childDisplay(false)" >销毁子组件</button> <br>
+    <button class="primary margin5" (click)="childDisplay(true)" >重建组件</button> <br>
+  </div>
+</body>
+</html>
