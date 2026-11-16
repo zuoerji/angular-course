@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>内置控制流</h1>
+  <button class="primary margin5" (click)="role.set('admin')">admin</button>
+  <button class="primary margin5" (click)="role.set('editor')">editor</button>
+  <button class="primary margin5" (click)="role.set('guest')">guest</button>
+  <button class="primary margin5" (click)="role.set('guest1')">guest1</button>
+  <div [ngSwitch]="role()">
+    <p *ngSwitchCase="'admin'">管理员</p>
+    <p *ngSwitchCase="'editor'">编辑</p>
+    <p *ngSwitchCase="'guest'">访客</p>
+  </div>
+
+  <div>
+    @switch (role()) {
+      @case ('admin') { <p>你是管理员,可以看到所有的功能</p> }
+      @case ('editor') { <p>你是编辑,可以修改内容</p> }
+      @case ('guest') { <p>你是访客,只读</p> }
+      @default { <p>未知角色</p> }
+    }
+
+  </div>
+</body>
+</html>

@@ -1,63 +1,21 @@
-import { Component, Input, signal, model, inject } from '@angular/core';
-import { CounterStore } from './counterStore';
+import { Component, Input, signal, model, inject, input, computed } from '@angular/core';
+
+
 /**
- * 跨组件通信
+ * 组件通信-路由传值
+ * withComponentInputBinding
+ * 使用步骤:
+ *  1. 引入 withComponentInputBinding
+ *  2. 在 组件件里面声明 一个 input 可以接收到 路由传过来的值
+ * 
 */
-@Component({
-  selector: 'child-input1',
-  template: `
-  <div class="lab">
-    <h4>子组件1</h4>
-    <div class="lab-title">子组件1 展示计数: {{store.count()}} </div>
-    <button (click)="onAddClick($event)">子组件1按钮-加</button> <br/>
-    <button (click)="onReduceClick($event)">子组件1按钮-减</button>
-  </div>`,
-})
-export class ChildInput1 {
-  constructor(public store: CounterStore) {}
-
-  onAddClick(e: Event) {
-    this.store.add();
-  }
-  onReduceClick(e: Event) {
-    this.store.reduce();
-  }
-}
-
-@Component({
-  selector: 'child-input2',
-  template: `
-  <div class="lab">
-    <h4>子组件1</h4>
-    <div class="lab-title">子组件2 展示计数: {{store.count()}} </div>
-    <button (click)="onAddClick($event)">子组件2按钮-加</button> <br/>
-    <button (click)="onReduceClick($event)">子组件2按钮-减</button>
-  </div>`,
-})
-export class ChildInput2 {
-  constructor(public store: CounterStore) {}
-  onAddClick(e: Event) {
-    this.store.add();
-  }
-  onReduceClick(e: Event) {
-    this.store.reduce();
-  }
-}
 
 
 @Component({
   selector: 'component-comm',
-  imports: [ChildInput1, ChildInput2],
-  providers: [CounterStore],
-  templateUrl: './html/componentComm-event-bus.html'
+  templateUrl: './html/component-comm.html'
 })
 export class ComponentComm {
-  constructor(public store: CounterStore){}
-
-  onAddClick(e: Event) {
-    this.store.add();
-  }
-  onReduceClick(e: Event) {
-    this.store.reduce();
-  }
+  id = input<string>();
+  userId = computed(() => `当前 ID 是: ${this.id()}`);
 }
