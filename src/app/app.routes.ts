@@ -23,4 +23,9 @@ export const routes: Routes = [
     title: '内置控制流',
     loadComponent: () => import('./demo/04-demo/04-demo').then((m) => m.Demo4),
   },
+  {
+    path: 'demo5',
+    title: 'signal',
+    loadComponent: () => import('./demo/05-demo/05-demo').then((m) => m.Demo5),
+  },
 ];

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>signal 相关 api</h1>
+  <div class="demo-box">
+    <div>当前的关键字: <span>{{ keyword() }}</span></div>
+
+    <button class="primary margin5" (click)="onChange('b')">改成 b</button>
+    <button class="primary margin5" (click)="onChange('c')">改成 c</button>
+    <button class="primary margin5" (click)="onChange('a')">改成 a</button>
+
+    <h3>日志</h3>
+    <div>
+      @for(item of log(); track item.id) {
+        <div> {{ item.val }} </div>
+      }
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>signal 相关 api</h1>
+  <div class="demo-box">
+    <div>count: <span>{{ count() }}</span></div>
+    <div>count 只读: <span>{{ readonlyCount() }}</span></div>
+    <div>数组: {{ list().join(',') }} </div>
+    <div>数组长度: {{ length() }}</div>
+
+    <button class="primary margin5" (click)="onChangeCount('set')">set 修改 count</button>
+    <button class="primary margin5" (click)="onChangeCount('update')">update 修改 count</button>
+    
+    <button class="primary margin5" (click)="onChangeList('set')">set 修改 list</button>
+    <button class="primary margin5" (click)="onChangeList('update')">update 修改 list</button>
+  </div>
+
+</body>
+</html>

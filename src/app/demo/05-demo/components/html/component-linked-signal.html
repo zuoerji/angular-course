@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>signal 相关 api - linkSignal</h1>
+  <div class="demo-box">
+    <div>原始数据: {{ user() | json }}</div>
+    <div>linked 数据: {{ linkedUser() | json }}</div>
+
+    <button class="primary margin5" (click)="onLinkedChange('set')">set 修改linked</button>
+    <button class="primary margin5" (click)="onLinkedChange('update')">update 修改linked</button>
+    <button class="primary margin5" (click)="onOriginChange()">修改原始值</button>
+  </div>
+</body>
+</html>
