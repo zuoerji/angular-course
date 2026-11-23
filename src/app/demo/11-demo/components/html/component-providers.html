@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>依赖注入</h1>
+    <div class="demo-box">
+        <div class="card">
+            <div class="lab">
+                <div class="lab-title">config:</div>
+                <p>{{ config }} </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="lab">
+                <div class="lab-title">hello:</div>
+                <p>{{ hello.say() }} {{ hello.welcome() }} </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="lab">
+                <div class="lab-title">factory:</div>
+                <p>{{ factory }} </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="lab">
+                <div class="lab-title">alias:</div>
+                <p>{{ alias }} </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

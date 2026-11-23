@@ -53,5 +53,10 @@ export const routes: Routes = [
     title: '生命周期',
     loadComponent: () => import('./demo/10-demo/10-demo').then((m) => m.Demo10),
   },
+  {
+    path: 'demo11',
+    title: '依赖注入',
+    loadComponent: () => import('./demo/11-demo/11-demo').then((m) => m.Demo11),
+  },
   { path: '**', redirectTo: '' },
 ];

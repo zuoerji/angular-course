@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>依赖注入</h1>
+    <div class="demo-box">
+        <div class="card">
+            @for (item of log(); track $index) {
+                <p> {{ item }}</p>
+            }
+        </div>
+        <button (click)="addLog('组件内追加')">追加 log</button>
+
+    </div>
+</body>
+</html>

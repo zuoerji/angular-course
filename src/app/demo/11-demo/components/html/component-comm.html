@@ -6,6 +6,17 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>生命周期</h1>
+    <h1>依赖注入</h1>
+    <div class="demo-box">
+        <h3>父组件</h3>
+        <div> 父组件实例: {{ store.id }} </div>
+        <div> 父组件 count: {{ store.count() }} </div>
+        <button (click)="store.add()"> 父组件 count + 1 </button>
+        <div class="card">
+            <component-child />
+        </div>
+
+    </div>
+
 </body>
 </html>
