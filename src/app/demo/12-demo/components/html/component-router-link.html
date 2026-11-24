@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>路由 - Router</h1>
+    <div class="demo-box">
+        <div> routeCount: {{ routeCount }} </div>
+        <div> routeUrl: {{ routeUrl }} </div>
+
+        <a routerLink="/demo10">demo10</a> <br>
+        <a [routerLink]="routerLinks">demo03</a> <br>
+        <a routerLink="setting">相对路径-设置</a>
+
+
+    </div>
+    <div class="demo-box">
+        <div>子路由</div>
+        <router-outlet></router-outlet>
+    </div>
+</body>
+</html>

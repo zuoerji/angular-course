@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>路由 - Router</h1>
+    <div class="demo-box">
+        <div class="card">
+            <div> paramMap : {{ paramMap() | json }} </div>
+            <div> queryParamMap : {{ queryParamMap() | json }} </div>
+        </div>
+        <button (click)="goId()">跳到 /demo12/12</button>
+        <br>
+        <button (click)="goQuery()"> query 参数 </button>
+        <button (click)="callbackRoot()"> 返回根目录 </button>
+        <button (click)="callback()"> 返回根上一级 </button>
+        <button (click)="goNewQuery()"> query 参数跳转新页面 </button>
+    </div>
+
+</body>
+</html>

@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
+import { SettingComponent } from './demo/12-demo/setting';
+import { loginGuard } from './demo/12-demo/guards';
 
 export const routes: Routes = [
   { path: '', component: Home, title: 'API 遍历 Demo' },
@@ -57,6 +59,38 @@ export const routes: Routes = [
     path: 'demo11',
     title: '依赖注入',
     loadComponent: () => import('./demo/11-demo/11-demo').then((m) => m.Demo11),
+  },
+  {
+    path: 'demo12',
+    title: '路由',
+    loadComponent: () => import('./demo/12-demo/12-demo').then((m) => m.Demo12),
+    children: [
+      { path: 'setting', component: SettingComponent },
+      {
+        path: 'panel/:tab',
+        loadComponent: () => import('./demo/12-demo/components/componentComm').then((m) =>m.PanelPage),
+      },
+      {
+        path: 'item/:id',
+        loadComponent: () => import('./demo/12-demo/components/componentComm').then((m) =>m.ItemPage),
+      }
+    ]
+  },
+  {
+    path: 'demo12/lazy',
+    title: '路由懒加载',
+    loadChildren: () => import('./demo/12-demo/lazy-routes').then((m) => m.LAZY_ROUTES),
+  },
+  {
+    path: 'demo12/protected',
+    title: '路由守卫',
+    canActivate: [loginGuard],
+    loadComponent: () => import('./demo/12-demo/protected-page').then((m) => m.ProtectedPage),
+  },
+  {
+    path: 'demo12/:id',
+    title: '路由',
+    loadComponent: () => import('./demo/12-demo/12-demo').then((m) => m.Demo12),
   },
   { path: '**', redirectTo: '' },
 ];

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>路由 - Router</h1>
+    <div class="demo-box">
+
+        <a routerLink="/demo12" routerLinkActive="active">demo12</a> <br>
+        <a
+            [routerLink]="routerLinks"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+        >demo12/12</a> <br>
+        <a routerLink="/demo12" routerLinkActive #rla="routerLinkActive" >
+            关于 {{ rla.isActive ? '当前页面': '' }}
+        </a>
+
+
+    </div>
+
+</body>
+</html>

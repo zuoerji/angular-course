@@ -10,4 +10,4 @@ import { ComponentComm } from './components/componentComm';
   `
 })
 
-export class Demo11 {};
+export class Demo11 {}
