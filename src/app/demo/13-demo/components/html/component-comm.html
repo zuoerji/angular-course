@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTTP-拦截器</h1>
+    <div class="demo-box">
+        <div> 请求结果: </div>
+        <div>userRes.error(): {{ userRes.error() | json }}</div>
+        <div>userRes.isLoading(): {{ userRes.isLoading() }}</div>
+        <div>userRes.hasValue(): {{ userRes.hasValue() }}</div>
+        <div>userRes.value(): {{ userRes.value() | json }}</div>
+        <button (click)="getUser(12)">id 改成 12</button>
+        <button (click)="getUser(0)">id 改成 0</button>
+        <button (click)="getUser(99)">id 改成 99</button>
+    </div>
+</body>
+</html>

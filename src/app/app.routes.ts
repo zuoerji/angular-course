@@ -92,5 +92,10 @@ export const routes: Routes = [
     title: '路由',
     loadComponent: () => import('./demo/12-demo/12-demo').then((m) => m.Demo12),
   },
+  {
+    path: 'demo13',
+    title: 'HTTP',
+    loadComponent: () => import('./demo/13-demo/13-demo').then((m) => m.Demo13),
+  },
   { path: '**', redirectTo: '' },
 ];
