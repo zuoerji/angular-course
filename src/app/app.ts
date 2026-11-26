@@ -28,6 +28,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
         <a routerLink="/demo12/" routerLinkActive="active">路由</a>
         <a routerLink="/demo13/" routerLinkActive="active">HTTP</a>
         <a routerLink="/demo14/" routerLinkActive="active">表单</a>
+        <a routerLink="/demo15/" routerLinkActive="active">阶级API</a>
       </nav>
       <main class="main">
         <router-outlet />

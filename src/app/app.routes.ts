@@ -102,5 +102,10 @@ export const routes: Routes = [
     title: '表单',
     loadComponent: () => import('./demo/14-demo/14-demo').then((m) => m.Demo14),
   },
+  {
+    path: 'demo15',
+    title: '进阶API',
+    loadComponent: () => import('./demo/15-demo/15-demo').then((m) => m.Demo15),
+  },
   { path: '**', redirectTo: '' },
 ];

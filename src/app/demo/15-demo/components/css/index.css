@@ -1,0 +1,41 @@
+.cards-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to   {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(28px);
+    }
+}
+
+
+
+.cards-item-enter {
+    animation: fadeIn 1s ease-out;
+}
+.cards-item-leave {
+    animation: fadeOut 1s ease-out;
+}
+
+.card-component {
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}

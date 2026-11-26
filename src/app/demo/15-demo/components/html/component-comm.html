@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>进阶-API</h1>
+    <div class="demo-box">
+        <div class="card">
+            html 字符串
+            <div [innerHTML]="raw"></div>
+        </div>
+        <div class="card">
+            trusted: html 字符串
+            <div [innerHTML]="trusted"></div>
+        </div>
+        <div class="card">
+            createComponent 方式
+            <button (click)="add()">添加</button>
+            <button (click)="destroyLast()">销毁最后一个</button>
+            <div class="card-component">
+                <ng-container #host />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

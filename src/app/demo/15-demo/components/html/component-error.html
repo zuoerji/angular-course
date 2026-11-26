@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>进阶-API</h1>
+    <div class="demo-box">
+        <div class="card">
+            <div> count: {{ count() }} </div>
+            <button (click)="throwHandle()"> 事件处理报错 </button>
+            <button (click)="reportHandle()"> 手动调用 </button>
+            <button (click)="add()"> 页面响应 </button>
+        </div>
+        <div class="card">
+            <div>日志: </div>
+            @for (item of log(); track item.at) {
+                <p> {{ item | json }} </p>
+            }
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>进阶-API</h1>
+    <div class="demo-box">
+        <div class="card">
+            <div class="form-row">
+                @for (l of locales; track l.id) {
+                    <button [class.primary]="locale() === l.id" (click)="locale.set(l.id)">{{ l.label }}</button>
+                }
+            </div>
+        </div>
+        <div class="card">
+            {{ locale() }}
+        </div>
+        <div class="card">
+            <div> date: {{ date | date: 'fullDate' : '' : locale() }} </div>
+        </div>
+    </div>
+</body>
+</html>

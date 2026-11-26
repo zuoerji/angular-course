@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>进阶-API</h1>
+    <div class="demo-box">
+        <button (click)="addCard()">加卡片</button>
+        <button (click)="reduceCard()">加卡片</button>
+        <div class="card">
+            @for (item of cards(); track item.id) {
+                <p
+                        class="cards-item"
+                        animate.enter="cards-item-enter"
+                        animate.leave="cards-item-leave"
+                > {{ item.label }} </p>
+            }
+        </div>
+    </div>
+</body>
+</html>
