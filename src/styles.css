@@ -25,12 +25,12 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family:
-    system-ui,
-    -apple-system,
-    'Segoe UI',
-    'PingFang SC',
-    'Microsoft YaHei',
-    sans-serif;
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          'PingFang SC',
+          'Microsoft YaHei',
+          sans-serif;
   font-size: 15px;
   line-height: 1.65;
 }
@@ -51,6 +51,10 @@ pre {
   background: var(--panel);
   border-right: 1px solid var(--border);
   padding: 18px 14px;
+}
+.sidebar .sidebar-content {
+  height: 100vh;
+  overflow: auto;
 }
 
 .sidebar h1 {
@@ -361,6 +365,175 @@ table.kv td {
 table.kv th {
   background: var(--code-bg);
 }
+
+/* ---- 第 14–15 章：表单与 HTTP 演示 ---- */
+input.form-input {
+  font: inherit;
+  font-size: 13.5px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+  width: 220px;
+}
+
+input.form-input:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 1px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  height: 70px;
+}
+
+.form-row label {
+  min-width: 76px;
+  font-size: 13.5px;
+}
+
+.form-error {
+  color: var(--old);
+  font-size: 13px;
+}
+
+.form-ok {
+  color: var(--new);
+  font-size: 13px;
+}
+
+.trace {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  font-family: Consolas, monospace;
+  font-size: 12.5px;
+}
+
+.trace li {
+  padding: 3px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+/* ---- 第 16 章：动画 / i18n / SW / sanitizer ---- */
+.demo16-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  min-height: 52px;
+}
+
+.demo16-card,
+.demo16-fn {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #fff;
+}
+
+.demo16-empty {
+  color: var(--muted);
+  font-size: 13px;
+  padding: 10px 14px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
+@keyframes demo16-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes demo16-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+}
+
+.demo16-enter {
+  animation: demo16-in 420ms ease-out;
+}
+
+.demo16-leave {
+  animation: demo16-out 420ms ease-in forwards;
+}
+
+.d16-render {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-top: 10px;
+  background: #fbfcfd;
+  min-height: 44px;
+}
+
+.d16-host {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+  min-height: 46px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo16-enter,
+  .demo16-leave {
+    animation-duration: 1ms;
+  }
+}
+
+/* ---------- 第 18 章：原理探针 ---------- */
+.d18-probes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.d18-probe {
+  display: block;
+  padding: 8px 12px;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  background: #fbfcfd;
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+.d18-stage {
+  min-height: 44px;
+  margin: 10px 0;
+  padding: 10px 12px;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.d18-stage p {
+  margin: 0;
+}
+
+.d18-raw {
+  font-variant-numeric: tabular-nums;
+}
+
 .padding10 {
   padding: 10px;
 }
@@ -375,6 +548,19 @@ table.kv th {
 }
 ul {
   padding: 10px;
+}
+
+.form-row-item {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.form-row-item .error-message {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  color: red;
 }
 
 .cursor{

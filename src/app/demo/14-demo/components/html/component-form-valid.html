@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>表单</h1>
+    <div class="card">
+        <div class="form-row">
+            <label>用户名</label>
+            <div class="form-row-item">
+                <input class="form-input" placeholder="输入用户名" [formField]="f.username" />
+                @if (f.username().invalid() ) {
+                    <span  class="error-message">{{ f.username().valid() }} - {{ f.username().errors()[0].message }}</span>
+                }
+            </div>
+            <span class="note">required + minLength(3)</span>
+        </div>
+        <div class="form-row">
+            <label>邮箱</label>
+            <div class="form-row-item">
+                <input class="form-input" placeholder="输入邮箱" [formField]="f.email" />
+                @if (f.email().invalid() ) {
+                    <span  class="error-message">{{ f.email().valid() }} - {{ f.email().errors()[0].message }}</span>
+                }
+            </div>
+            <span class="note">email</span>
+        </div>
+        <div class="form-row">
+            <label>备注</label>
+            <div class="form-row-item">
+                <input class="form-input" placeholder="输入备注" [formField]="f.note" />
+                @if (f.note().invalid() ) {
+                    <span  class="error-message">{{ f.note().valid() }} - {{ f.note().errors()[0].message }}</span>
+                }
+            </div>
+            <span class="note">自定义：不许含「广告」</span>
+        </div>
+        <div class="form-row">
+            整体报错信息: {{ f().errorSummary() | json }}
+        </div>
+        <div class="form-row">
+            提交结果: {{ submitResult() }}
+        </div>
+
+        <div class="form-row">
+            <button (click)="doSubmit()">提交 submit()</button>
+        </div>
+    </div>
+</body>
+</html>

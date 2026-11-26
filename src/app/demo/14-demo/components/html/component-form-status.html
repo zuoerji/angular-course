@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>表单</h1>
+    <div class="card">
+        <div class="card-title">表单</div>
+        <div class="form-row">
+            <label for="">用户名</label>
+            <input class="form-input" [formField]="f.info.name">
+            <button (click)="changeName()">改变 name</button>
+        </div>
+    </div>
+    <div class="card">
+        <p> f.info.name().value() : {{ f.info.name().value() }} </p>
+        <p> f.info.name().controlValue() : {{ f.info.name().controlValue() }} </p>
+        <p> f().valid(): {{ f().valid() }} </p>
+        <p> f().invalid() : {{ f().invalid() }} </p>
+        <p> f.info.name().pending(): {{ f.info.name().pending() }} </p>
+        <p> f.info.name().errors(): {{ f.info.name().errors() | json }} </p>
+        <p> f.info.name().touched(): {{ f.info.name().touched() }} </p>
+        <p> f.info.name().dirty(): {{ f.info.name().dirty() }} </p>
+    </div>
+</body>
+</html>

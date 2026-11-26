@@ -23,9 +23,11 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
         <a routerLink="/demo8/" routerLinkActive="active">内容投影</a>
         <a routerLink="/demo9/" routerLinkActive="active">视图/内容查询</a>
         <a routerLink="/demo10/" routerLinkActive="active">生命周期</a>
+        <div class="group-title">第 2 章 </div>
         <a routerLink="/demo11/" routerLinkActive="active">依赖注入</a>
         <a routerLink="/demo12/" routerLinkActive="active">路由</a>
         <a routerLink="/demo13/" routerLinkActive="active">HTTP</a>
+        <a routerLink="/demo14/" routerLinkActive="active">表单</a>
       </nav>
       <main class="main">
         <router-outlet />

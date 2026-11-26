@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>表单11</h1>
+<form [formGroup]="f">
+    <div class="card">
+        <div class="form-row">
+            <label>用户名</label>
+            <div class="form-row-item">
+                <input class="form-input" placeholder="输入用户名" formControlName="username" />
+                @if (f.controls.username.invalid && f.controls.username.touched ) {
+                    <span class="error-message">
+                        @if (f.controls.username.hasError('required')) { 用户名必填 }
+                        @if (f.controls.username.hasError('minlength')) { 至少 3 个字符 }
+                    </span>
+                }
+            </div>
+            <span class="note">required + minLength(3)</span>
+        </div>
+
+        <div class="form-row">
+            <label>邮箱</label>
+            <div class="form-row-item">
+                <input class="form-input" placeholder="输入邮箱" formControlName="email" />
+                @if (f.controls.email.invalid && f.controls.email.touched ) {
+                    <span class="error-message">
+                        @if (f.controls.email.hasError('required')) { 邮箱必填 }
+                        @if (f.controls.email.hasError('email')) { 邮箱格式不对 }
+                    </span>
+                }
+            </div>
+            <span class="note">email</span>
+        </div>
+
+        <div class="form-row">
+            <label>备注</label>
+            <div class="form-row-item">
+                <input class="form-input" placeholder="输入备注" formControlName="note" />
+                @if (f.controls.note.invalid && (f.controls.note.touched || f.controls.note.dirty)) {
+                    <span class="error-message">
+                        @if (f.controls.note.hasError('spam')) { {{ f.controls.note.getError('spam') }} }
+                    </span>
+                }
+            </div>
+            <span class="note">自定义：不许含「广告」</span>
+        </div>
+
+        <div class="form-row">
+           <div>提交结果: {{ submitResult }}</div>
+            <div>用户名: {{ f.controls.username.value }}</div>
+        </div>
+        <div class="form-row">
+            <button (click)="changeName()">代码修改表单-用户名</button>
+            <button type="button" (click)="doSubmit()">提交</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

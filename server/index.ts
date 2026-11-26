@@ -3,7 +3,7 @@ import path from "path";
 import express from 'express';
 import cors from 'cors';
 
-import type { ResultResponse, User, ResultData } from '../shared/types';
+import type { ResultResponse, User, ResultData, CheckName } from '../shared/types';
 const app = express();
 
 app.use(express.json());
@@ -107,6 +107,19 @@ app.post("/api/auth", (req: express.Request, res: express.Response) => {
 });
 
 
+app.get("/api/check-username", (req: express.Request, res: express.Response) => {
+    const data = {
+        available: false
+    }
+    const body: ResultResponse<CheckName> = {
+        data,
+        message: '成功',
+        success: true,
+    }
+    setTimeout(() =>{
+        res.json(body);
+    },3000)
+})
 
 app.listen(8080,() =>{
     console.log("Server started on port 8080");

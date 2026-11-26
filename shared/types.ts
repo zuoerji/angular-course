@@ -16,3 +16,14 @@ export interface ResultData {
     version: string;
     name: string;
 }
+
+export interface CheckName {
+    available: boolean;
+}
+
+
+export interface Signup {
+    username: string;
+    email: string;
+    note: string;
+}
